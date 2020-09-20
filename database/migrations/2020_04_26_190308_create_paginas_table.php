@@ -14,9 +14,9 @@ class CreatePaginasTable extends Migration
     public function up()
     {
         Schema::create('paginas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('numero');
-            $table->integer('capitulo_id');
+            $table->integer('capitulo_id')->unsigned();
 
             $table->foreign('capitulo_id')
                 ->references('id')

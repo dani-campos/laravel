@@ -14,9 +14,9 @@ class CreateCapitulosTable extends Migration
     public function up()
     {
         Schema::create('capitulos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('numero');
-            $table->integer('livro_id');
+            $table->integer('livro_id')->unsigned();
             $table->foreign('livro_id')
                 ->references('id')
                 ->on('livros');
